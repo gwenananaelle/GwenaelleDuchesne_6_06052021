@@ -1,0 +1,70 @@
+.card {
+  width: 263px;
+  margin: 72px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: nowrap;
+  align-items: center;
+  align-content: center;
+  &__link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+  }
+  &__img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  &__name {
+    font-family: "DM Sans", sans-serif;
+    font-size: 36px;
+    text-align: center;
+    color: #d3573c;
+    line-height: 46.87px;
+  }
+  &__location {
+    font-family: "DM Sans", sans-serif;
+    font-size: 13px;
+    text-align: center;
+    color: #901c1c;
+    line-height: 16.93px;
+    margin: 0;
+  }
+  &__tagline {
+    font-family: "DM Sans", sans-serif;
+    text-align: center;
+    font-size: 10px;
+    line-height: 13.02px;
+  }
+  &__price {
+    font-family: DM Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 9px;
+    line-height: 12px;
+    /* identical to box height */
+    text-align: center;
+    color: #757575;
+  }
+}
+
+.span-tag {
+  padding: 0 4px;
+  height: 16px;
+  border: 0.5px solid #c4c4c4;
+  box-sizing: border-box;
+  border-radius: 11px;
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  /* identical to box height */
+  text-align: center;
+  color: #911c1c;
+}
