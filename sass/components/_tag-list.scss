@@ -1,0 +1,22 @@
+.taglist {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  &__tag {
+    text-transform: capitalize;
+    margin: 5px;
+    padding: 3px;
+    border: 0.5px solid #c4c4c4;
+    box-sizing: border-box;
+    border-radius: 11px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    /* identical to box height */
+    text-align: center;
+    color: $secondary-color;
+  }
+}

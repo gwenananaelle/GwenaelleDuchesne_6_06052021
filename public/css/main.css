@@ -5,8 +5,41 @@
           box-sizing: border-box;
 }
 
+body {
+  font-family: "DM Sans", sans-serif;
+}
+
+.header {
+  margin: 42px 105px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.header__logo {
+  width: 200px;
+  height: 50px;
+}
+
+.header__title {
+  font-size: 36px;
+  line-height: 47px;
+  color: #901c1c;
+  -webkit-box-ordinal-group: 4;
+      -ms-flex-order: 3;
+          order: 3;
+}
+
 .card {
-  width: 263px;
   margin: 72px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -62,7 +95,6 @@
 }
 
 .card__location {
-  font-family: "DM Sans", sans-serif;
   font-size: 13px;
   text-align: center;
   color: #901c1c;
@@ -71,19 +103,16 @@
 }
 
 .card__tagline {
-  font-family: "DM Sans", sans-serif;
   text-align: center;
   font-size: 10px;
   line-height: 13.02px;
 }
 
 .card__price {
-  font-family: DM Sans;
   font-style: normal;
   font-weight: normal;
   font-size: 9px;
   line-height: 12px;
-  /* identical to box height */
   text-align: center;
   color: #757575;
 }
@@ -95,14 +124,41 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border-radius: 11px;
-  font-family: DM Sans;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: center;
+  color: #901c1c;
+}
+
+.taglist {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.taglist__tag {
+  text-transform: capitalize;
+  margin: 5px;
+  padding: 3px;
+  border: 0.5px solid #c4c4c4;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 11px;
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
   line-height: 16px;
   /* identical to box height */
   text-align: center;
-  color: #911c1c;
+  color: #901c1c;
 }
 
 .section-photographers {

@@ -1,5 +1,7 @@
+@import "utils/variables";
 @import "base/normalize";
 @import "base/typography";
-@import "utils/variables";
+@import "layout/header";
 @import "components/card-photographer";
+@import "components/tag-list";
 @import "pages/home";

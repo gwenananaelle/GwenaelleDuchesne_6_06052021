@@ -1,0 +1,17 @@
+.header {
+  margin: 42px 105px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  &__logo {
+    width: 200px;
+    height: 50px;
+  }
+  &__title {
+    font-size: 36px;
+    line-height: 47px;
+    color: $secondary-color;
+    order: 3;
+  }
+}
