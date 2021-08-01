@@ -18,5 +18,10 @@
     /* identical to box height */
     text-align: center;
     color: $secondary-color;
+    &:hover,
+    &:focus {
+      color: #ffffff;
+      background: #911c1c;
+    }
   }
 }

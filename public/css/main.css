@@ -161,6 +161,11 @@ body {
   color: #901c1c;
 }
 
+.taglist__tag:hover, .taglist__tag:focus {
+  color: #ffffff;
+  background: #911c1c;
+}
+
 .section-photographers {
   display: -webkit-box;
   display: -ms-flexbox;
