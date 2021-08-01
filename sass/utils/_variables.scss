@@ -3,3 +3,7 @@ $secondary-color: #901c1c;
 $clear-grey: #fafafa;
 $dark-grey: #525252;
 $font-stack: "DM Sans", sans-serif;
+$breakpoints: (
+  tablet: 767px,
+  desktop: 1023px
+);

@@ -6,11 +6,16 @@
 }
 
 body {
+  max-width: 1440px;
+  margin: auto;
+}
+
+body {
   font-family: "DM Sans", sans-serif;
 }
 
 .header {
-  margin: 42px 105px;
+  margin: 42px 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -18,11 +23,22 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+@media screen and (min-width: 1023px) {
+  .header {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    margin: 42px 105px;
+  }
 }
 
 .header__logo {
@@ -31,12 +47,19 @@ body {
 }
 
 .header__title {
-  font-size: 36px;
-  line-height: 47px;
+  font-size: 14px;
+  line-height: 18.23px;
   color: #901c1c;
-  -webkit-box-ordinal-group: 4;
-      -ms-flex-order: 3;
-          order: 3;
+}
+
+@media screen and (min-width: 1023px) {
+  .header__title {
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+    font-size: 36px;
+    line-height: 47px;
+  }
 }
 
 .card {
@@ -142,6 +165,18 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+@media screen and (min-width: 1023px) {
+  .taglist {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
 }
 
 .taglist__tag {
