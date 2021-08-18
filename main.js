@@ -1,30 +1,38 @@
-function getPhotographers() {
-  fetch("FishEyeData.json")
-    .then(function(res) {
-      if (res.ok) {
-        return res.json();
-      }
-    })
-    .then(function(value) {
-      console.log(value);
-      let allTags = [];
-      value.photographers.forEach(photographer => {
-        showPhotographers(photographer);
-        photographer.tags.forEach(tag => {
-          if (!allTags.includes(tag)) {
-            allTags.push(tag);
-          }
-        });
-      });
-      let parent = document.querySelector(".header");
-      showTags(allTags, parent);
-      console.log(allTags);
-    })
-    .catch(function(err) {
-      console.log(err);
-    });
+function getPhotographersByTag(tag) {
+  clearPhotographers();
+  fetchFishEyeDataJSON().then(data => {
+    const photographers = data.photographers;
+    const photographersWithTag = photographers.filter(photographer =>
+      photographer.tags.includes(tag)
+    );
+    photographersWithTag.forEach(photographer =>
+      showPhotographers(photographer)
+    );
+  });
 }
-document.addEventListener("load", getPhotographers());
+async function fetchFishEyeDataJSON() {
+  const response = await fetch("FishEyeData.json");
+  const data = await response.json();
+  return data;
+}
+
+window.addEventListener("load", async () => {
+  let allTags = [];
+  fetchFishEyeDataJSON().then(data => {
+    console.log(data);
+    data.photographers.forEach(photographer => {
+      showPhotographers(photographer);
+      photographer.tags.forEach(tag => {
+        if (!allTags.includes(tag)) {
+          allTags.push(tag);
+        }
+      });
+    });
+    let parent = document.querySelector(".header");
+    showTags(allTags, parent);
+    console.log(allTags);
+  });
+});
 
 function showTags(tags, parent) {
   const tagList = document.createElement("ul");
@@ -33,6 +41,10 @@ function showTags(tags, parent) {
     const listItem = document.createElement("li");
     listItem.textContent = `#${tag}`;
     listItem.classList.add("taglist__tag");
+    listItem.addEventListener("click", function buttonClicked(e) {
+      getPhotographersByTag(tag);
+      e.stopPropagation();
+    });
     tagList.appendChild(listItem);
   });
   parent.appendChild(tagList);
@@ -53,4 +65,9 @@ function showPhotographers(photographer) {
   const section = document.getElementById("photographers");
   section.appendChild(card);
   showTags(photographer.tags, card);
+}
+
+function clearPhotographers() {
+  const section = document.getElementById("photographers");
+  section.innerHTML = "";
 }
