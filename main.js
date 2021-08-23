@@ -56,7 +56,7 @@ function showPhotographers(photographer) {
   const card = document.createElement("article");
   card.classList.add("card");
   card.innerHTML = `
-    <a class="card__link">
+    <a class="card__link" href="photographer-page.html?id=${photographer.id}">
       <img class="card__img" src="/public/img/Photographers-ID/${photographer.portrait}">
       <h2 class="card__name">${photographer.name}</h2>
     </a>
