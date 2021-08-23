@@ -16,7 +16,7 @@ async function fetchFishEyeDataJSON() {
   return data;
 }
 
-window.addEventListener("load", async () => {
+async function loadPhotographers() {
   let allTags = [];
   fetchFishEyeDataJSON().then(data => {
     console.log(data);
@@ -32,7 +32,7 @@ window.addEventListener("load", async () => {
     showTags(allTags, parent, true);
     console.log(allTags);
   });
-});
+}
 
 function showTags(tags, parent, clickable) {
   const tagList = document.createElement("ul");
