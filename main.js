@@ -29,22 +29,24 @@ window.addEventListener("load", async () => {
       });
     });
     let parent = document.querySelector(".header");
-    showTags(allTags, parent);
+    showTags(allTags, parent, true);
     console.log(allTags);
   });
 });
 
-function showTags(tags, parent) {
+function showTags(tags, parent, clickable) {
   const tagList = document.createElement("ul");
   tagList.classList.add("taglist");
   tags.forEach(tag => {
     const listItem = document.createElement("li");
     listItem.textContent = `#${tag}`;
     listItem.classList.add("taglist__tag");
-    listItem.addEventListener("click", function buttonClicked(e) {
-      getPhotographersByTag(tag);
-      e.stopPropagation();
-    });
+    if (clickable) {
+      listItem.addEventListener("click", function buttonClicked(e) {
+        getPhotographersByTag(tag);
+        e.stopPropagation();
+      });
+    }
     tagList.appendChild(listItem);
   });
   parent.appendChild(tagList);
@@ -64,7 +66,7 @@ function showPhotographers(photographer) {
 `;
   const section = document.getElementById("photographers");
   section.appendChild(card);
-  showTags(photographer.tags, card);
+  showTags(photographer.tags, card, false);
 }
 
 function clearPhotographers() {
