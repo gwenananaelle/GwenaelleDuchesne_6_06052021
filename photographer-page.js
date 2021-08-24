@@ -15,15 +15,17 @@ async function getPhotographersById(id) {
   return photographersWithId;
 }
 
-function showPhotographerBanner(photographer) {
+function createPhotographerBanner(photographer) {
   const banner = document.createElement("article");
-  banner.classList.add("banner");
+  banner.classList.add("photograph-header");
   banner.innerHTML = `
-    <h1>${photographer.name}<h1>
-    <p class="card__location">${photographer.city}, ${photographer.country}</p>
-    <p class="card__tagline">${photographer.tagline}</p>
-    <button>Contactez moi<button>
-    <img class="card__img" src="/public/img/Photographers-ID/${photographer.portrait}">
+    <div class="photographer-profile">
+    <h1 class="photographer-profile__name">${photographer.name}</h1>
+    <p class="photographer-profile__location">${photographer.city}, ${photographer.country}</p>
+    <p class="photographer-profile__tagline">${photographer.tagline}</p>
+    </div>
+    <button class="button">Contactez moi</button>
+    <img class="photograph-header__user" src="/public/img/Photographers-ID/${photographer.portrait}">
     `;
   const section = document.getElementById("banner");
   section.appendChild(banner);
