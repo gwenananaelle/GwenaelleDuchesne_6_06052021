@@ -1,0 +1,11 @@
+.thumb-imgfull {
+  width: 350px;
+  height: 351px;
+  object-fit: cover;
+  &_img {
+    height: 300px;
+    width: 350px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+}

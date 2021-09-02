@@ -1,0 +1,44 @@
+.dropdown {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  justify-content: center;
+  align-content: center;
+  width: max-content;
+  padding: 0 10px;
+  border-radius: 5px;
+  background-color: #911c1c;
+  &:hover {
+    button:not(:first-child) {
+      display: block;
+    }
+  }
+  button {
+    font-family: DM Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 26px;
+    color: #ffffff;
+    padding: 20px 10px;
+    width: 100%;
+    background-color: inherit;
+    &:hover {
+      background: #db8876;
+    }
+    &:focus {
+      background: #db8876;
+    }
+    &:not(:first-child) {
+      border-top: solid thin white;
+      display: none;
+    }
+  }
+  &:hover {
+    background: #db8876;
+  }
+  &:focus {
+    background: #db8876;
+  }
+}

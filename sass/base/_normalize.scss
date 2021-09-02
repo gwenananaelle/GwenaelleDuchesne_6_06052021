@@ -13,3 +13,21 @@ a:active {
   text-decoration: none;
   color: inherit;
 }
+button {
+  background-color: inherit;
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+  overflow: visible;
+  text-transform: none;
+  padding: 0;
+  display: inline-block;
+  border: none;
+  text-decoration: none;
+  line-height: 1;
+  cursor: pointer;
+  text-align: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
