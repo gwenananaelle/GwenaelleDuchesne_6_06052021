@@ -1,8 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans&display=swap");
 * {
   margin: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
@@ -43,47 +42,30 @@ body {
 
 .header {
   margin: 42px 20px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
-
 @media screen and (min-width: 1023px) {
   .header {
-    -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
+    flex-wrap: nowrap;
     margin: 42px 105px;
   }
 }
-
 .header__logo {
   width: 200px;
   height: 50px;
 }
-
 .header__title {
   font-size: 14px;
   line-height: 18.23px;
   color: #901c1c;
 }
-
 @media screen and (min-width: 1023px) {
   .header__title {
-    -webkit-box-ordinal-group: 4;
-        -ms-flex-order: 3;
-            order: 3;
+    order: 3;
     font-size: 36px;
     line-height: 47px;
   }
@@ -91,51 +73,26 @@ body {
 
 .card {
   margin: 72px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: nowrap;
+  align-items: center;
+  align-content: center;
 }
-
 .card__link {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
 }
-
 .card__img {
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
-
 .card__name {
   font-family: "DM Sans", sans-serif;
   font-size: 36px;
@@ -143,7 +100,6 @@ body {
   color: #d3573c;
   line-height: 46.87px;
 }
-
 .card__location {
   font-size: 13px;
   text-align: center;
@@ -151,13 +107,11 @@ body {
   line-height: 16.93px;
   margin: 0;
 }
-
 .card__tagline {
   text-align: center;
   font-size: 10px;
   line-height: 13.02px;
 }
-
 .card__price {
   font-style: normal;
   font-weight: normal;
@@ -171,8 +125,7 @@ body {
   padding: 0 4px;
   height: 16px;
   border: 0.5px solid #c4c4c4;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   border-radius: 11px;
   font-style: normal;
   font-weight: 500;
@@ -190,7 +143,6 @@ body {
   padding: 56px 50px;
   position: relative;
 }
-
 .photograph-header__user {
   position: absolute;
   right: 50px;
@@ -198,15 +150,13 @@ body {
   height: 200px;
   width: 200px;
   background: #c4c4c4;
-  -webkit-box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
-          box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
   border-radius: 50%;
 }
 
 .photographer-profile {
   height: 100%;
 }
-
 .photographer-profile__name {
   font-family: DM Sans;
   font-style: normal;
@@ -215,7 +165,6 @@ body {
   line-height: 83px;
   color: #d3573c;
 }
-
 .photographer-profile__location {
   font-family: DM Sans;
   font-style: normal;
@@ -224,7 +173,6 @@ body {
   line-height: 31px;
   color: #901c1c;
 }
-
 .photographer-profile__tagline {
   font-family: DM Sans;
   font-style: normal;
@@ -238,33 +186,22 @@ body {
   list-style-type: none;
   padding: 0;
   margin: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
-
 @media screen and (min-width: 1023px) {
   .taglist {
-    -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
+    flex-wrap: nowrap;
   }
 }
-
 .taglist__tag {
   text-transform: capitalize;
   margin: 5px;
   padding: 3px;
   border: 0.5px solid #c4c4c4;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   border-radius: 11px;
   font-style: normal;
   font-weight: 500;
@@ -274,7 +211,6 @@ body {
   text-align: center;
   color: #901c1c;
 }
-
 .taglist__tag:hover, .taglist__tag:focus {
   color: #ffffff;
   background: #911c1c;
@@ -293,41 +229,25 @@ body {
   /* identical to box height */
   color: #ffffff;
 }
-
 .button:hover, .button:focus {
   background: #db8876;
 }
 
 .dropdown {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-wrap: nowrap;
-      flex-wrap: nowrap;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
-  width: -webkit-max-content;
-  width: -moz-max-content;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  justify-content: center;
+  align-content: center;
   width: max-content;
   padding: 0 10px;
   border-radius: 5px;
   background-color: #911c1c;
 }
-
 .dropdown:hover button:not(:first-child) {
   display: block;
 }
-
 .dropdown button {
   font-family: DM Sans;
   font-style: normal;
@@ -339,24 +259,19 @@ body {
   width: 100%;
   background-color: inherit;
 }
-
 .dropdown button:hover {
   background: #db8876;
 }
-
 .dropdown button:focus {
   background: #db8876;
 }
-
 .dropdown button:not(:first-child) {
   border-top: solid thin white;
   display: none;
 }
-
 .dropdown:hover {
   background: #db8876;
 }
-
 .dropdown:focus {
   background: #db8876;
 }
@@ -364,35 +279,47 @@ body {
 .thumb-imgfull {
   width: 350px;
   height: 351px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
-
 .thumb-imgfull_img {
   height: 300px;
   width: 350px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.lightbox-modal {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: #ffffff;
+}
+.lightbox-modal__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-content: center;
+}
+.lightbox-modal__img {
+  width: 1050px;
+  height: 900px;
   border-radius: 5px;
 }
 
 .section-photographers {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  -ms-flex-line-pack: stretch;
-      align-content: stretch;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  align-content: stretch;
 }
+
 /*# sourceMappingURL=main.css.map */

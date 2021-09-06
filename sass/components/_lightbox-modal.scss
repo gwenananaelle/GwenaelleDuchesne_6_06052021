@@ -1,0 +1,17 @@
+.lightbox-modal {
+  @include modal;
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-content: center;
+  }
+  &__img {
+    width: 1050px;
+    height: 900px;
+    border-radius: 5px;
+  }
+}
