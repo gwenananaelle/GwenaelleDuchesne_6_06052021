@@ -1,3 +1,14 @@
+let photographers = null;
+let medias = null;
+
+window.addEventListener("load", async () => {
+  const response = await fetch("FishEyeData.json");
+  const data = await response.json();
+  photographers = data.photographers;
+  medias = data.medias;
+  updatePhotographersRendering();
+});
+
 function getPhotographersByTag(tag) {
   clearPhotographers();
   fetchFishEyeDataJSON().then(data => {
@@ -10,28 +21,20 @@ function getPhotographersByTag(tag) {
     );
   });
 }
-async function fetchFishEyeDataJSON() {
-  const response = await fetch("FishEyeData.json");
-  const data = await response.json();
-  return data;
-}
 
-async function loadPhotographers() {
+async function updatePhotographersRendering() {
   let allTags = [];
-  fetchFishEyeDataJSON().then(data => {
-    console.log(data);
-    data.photographers.forEach(photographer => {
-      showPhotographers(photographer);
-      photographer.tags.forEach(tag => {
-        if (!allTags.includes(tag)) {
-          allTags.push(tag);
-        }
-      });
+  photographers.forEach(photographer => {
+    showPhotographers(photographer);
+    photographer.tags.forEach(tag => {
+      if (!allTags.includes(tag)) {
+        allTags.push(tag);
+      }
     });
-    let parent = document.querySelector(".header");
-    showTags(allTags, parent, true);
-    console.log(allTags);
   });
+  let parent = document.querySelector(".header");
+  showTags(allTags, parent, true);
+  console.log(allTags);
 }
 
 function showTags(tags, parent, clickable) {
