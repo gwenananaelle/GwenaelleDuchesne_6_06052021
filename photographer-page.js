@@ -29,7 +29,7 @@ function createPhotographerBanner(photographer) {
     <p class="photographer-profile__location">${photographer.city}, ${photographer.country}</p>
     <p class="photographer-profile__tagline">${photographer.tagline}</p>
     </div>
-    <button class="button">Contactez moi</button>
+    <button class="button" onclick="buildContactModal()">Contactez moi</button>
     <img class="photograph-header__user" src="/public/img/Photographers-ID/${photographer.portrait}">
     `;
   const section = document.getElementById("banner");

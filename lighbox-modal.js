@@ -1,10 +1,13 @@
+/**
+ *
+ * @param {Objet} media
+ */
 function buildLightbox(media) {
-  console.log("buildLightbox");
   const main = document.getElementById("main");
-  const slide = document.createElement("div");
-  slide.classList.add("slide");
-  slide.innerHTML = `
-  <section id="lightbox-modal" class="modal lightbox-modal">
+  const modal = document.createElement("section");
+  modal.classList.add("slide", "modal");
+  modal.innerHTML = `
+  <section id="lightbox-modal" class="lightbox-modal">
   <span class="close" onclick="closeModal()">&times;</span>
   <figure id="lightbox__container" class="lightbox-modal__container">
     <img id="${media.id}" src="/public/img/${media.photographerId}/${media.image}" class="lightbox-modal__img">
@@ -14,7 +17,7 @@ function buildLightbox(media) {
     <button class="lightbox__prev">Précédent</button>
   </section>
   `;
-  main.appendChild(slide);
+  main.appendChild(modal);
   document.querySelector(".lightbox__next").addEventListener("click", getNext);
   document.querySelector(".lightbox__prev").addEventListener("click", getPrev);
 }
@@ -48,6 +51,6 @@ function getPrev() {
   caption.innerText = `${mediaList[index].title}`;
 }
 function closeModal() {
-  const slide = document.querySelector(".slide");
+  const slide = document.querySelector(".modal");
   slide.parentNode.removeChild(slide);
 }

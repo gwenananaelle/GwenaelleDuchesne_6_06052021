@@ -9,6 +9,8 @@
   }
 }
 @mixin button {
+  width: 170px;
+  height: 69px;
   background: #911c1c;
   padding: 11px 21px;
   border: none;
@@ -39,4 +41,7 @@
   height: 100%;
   overflow: auto;
   background: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
