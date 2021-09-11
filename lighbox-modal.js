@@ -1,27 +1,3 @@
-/**
- *
- * @param {Objet} media
- */
-function buildLightbox(media) {
-  const main = document.getElementById("main");
-  const modal = document.createElement("section");
-  modal.classList.add("slide", "modal");
-  modal.innerHTML = `
-  <section id="lightbox-modal" class="lightbox-modal">
-  <span class="close" onclick="closeModal()">&times;</span>
-  <figure id="lightbox__container" class="lightbox-modal__container">
-    <img id="${media.id}" src="/public/img/${media.photographerId}/${media.image}" class="lightbox-modal__img">
-    <figcaption class="lightbox-modal__caption">${media.title}</figcaption>
-</figure>
-<button class="lightbox__next">Suivant</button>
-    <button class="lightbox__prev">Précédent</button>
-  </section>
-  `;
-  main.appendChild(modal);
-  document.querySelector(".lightbox__next").addEventListener("click", getNext);
-  document.querySelector(".lightbox__prev").addEventListener("click", getPrev);
-}
-
 function getNext() {
   const img = document.querySelector(".lightbox-modal__img");
   const caption = document.querySelector(".lightbox-modal__caption");

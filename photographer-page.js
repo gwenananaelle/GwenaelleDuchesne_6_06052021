@@ -39,22 +39,20 @@ function createPhotographerBanner(photographer) {
 function createMedia(mediaList) {
   const gallery = document.getElementById("gallery");
   mediaList.forEach(media => {
-    if (media.image) {
-      const thumb = document.createElement("article");
-      thumb.classList.add("thumb-imgfull");
-      thumb.innerHTML = `
-      <img src="/public/img/${media.photographerId}/${media.image}" class="thumb-imgfull_img"></img>
-      <p class="thumb-imgfull_title">
-    ${media.title}
-    <span class="thumb-imgfull_likes">${media.likes}</span>
-    </p>
-    `;
-      thumb.addEventListener("click", function() {
-        buildLightbox(media);
-      });
-      gallery.appendChild(thumb);
-    } else if (media.video) {
+    const factory = new MediaFactory();
+    let thumb;
+    let f;
+    if (media.video) {
+      const video = factory.createMedia("video", media);
+      thumb = video.buildThumb();
+      f = video.buildSlide.bind(video);
+    } else {
+      const image = factory.createMedia("image", media);
+      thumb = image.buildThumb();
+      f = image.buildSlide.bind(image);
     }
+    thumb.addEventListener("click", f);
+    gallery.appendChild(thumb);
   });
 }
 async function sortByTitle() {
