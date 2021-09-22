@@ -11,26 +11,81 @@
       media="screen"
       href="public/css/main.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="main.js"></script>
     <script src="photographer-page.js"></script>
     <script src="media-factory.js"></script>
+    <script src="Media.js"></script>
+    <script src="Video.js"></script>
+    <script src="Image.js"></script>
     <script src="lighbox-modal.js"></script>
     <script src="contact-modal.js"></script>
   </head>
-  <body>
+  <body id="photographer-page">
     <header class="header">
-      <a href="index.html" class="header__logo">
-        <img src="../public/img/logo.svg" alt="" />
+      <a href="index.html" role="image-link">
+        <img
+          src="../public/img/logo.svg"
+          alt="Fisheye Home page"
+          class="header__logo"
+        />
       </a>
     </header>
-    <main id="main">
+    <main id="main" class="main">
       <section id="banner"></section>
-      <div class="dropdown">
-        <button class="" onclick="sortByPopularity">Popularité</button>
-        <button class="">Date</button>
-        <button class="">Titre</button>
+      <button
+        class="photograph-header__button button"
+        onclick="buildContactModal()"
+      >
+        Contactez-moi
+      </button>
+      <div class="counter"></div>
+      <div class="select">
+        <span class="select__label" id="sortedBy">Trier par</span>
+        <div class="select__wrapper">
+          <div class="select__wrapper--native">
+            <select
+              class="select__button select__button--native"
+              aria-labelledby="sortedBy"
+            >
+              <option value="Popularité">Popularité</option>
+              <option value="Date">Date</option>
+              <option value="Titre">Titre</option>
+            </select>
+          </div>
+          <div class="select__wrapper--custom" aria-hidden="true" tabindex="-1">
+            <button class="select__button" aria-hidden="true" tabindex="-1">
+              <span class="option">Popularité</span>
+              <svg
+                class="select__button__icon"
+                aria-hidden="true"
+                focusable="false"
+                width="16"
+                height="11"
+                viewBox="0 0 16 11"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M1.88 10.5466L8 4.43996L14.12 10.5466L16 8.66663L8 0.66663L1.64355e-07 8.66663L1.88 10.5466Z"
+                  fill="white"
+                />
+              </svg>
+            </button>
+            <ul class="select__options active">
+              <li class="option select__option">Date</li>
+              <li class="option select__option">Titre</li>
+            </ul>
+          </div>
+        </div>
       </div>
-      <section id="gallery"></section>
+      <section id="gallery" class="gallery"></section>
     </main>
-    <footer></footer>
   </body>
 </html>
