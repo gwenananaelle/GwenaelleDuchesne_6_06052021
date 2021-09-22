@@ -1,6 +1,7 @@
 let photographer = null;
 let mediaList = null;
 const id = getId();
+let options = ["Popularité", "Date", "Titre"];
 
 window.addEventListener("load", async () => {
   const response = await fetch("FishEyeData.json");
@@ -9,8 +10,23 @@ window.addEventListener("load", async () => {
   const medias = await data.media;
   photographer = photographers.find(photographer => photographer.id === id);
   createPhotographerBanner(photographer);
-  mediaList = medias.filter(media => media.photographerId === id);
+  mediaByPhotographer = medias.filter(media => media.photographerId === id);
+  const factory = new MediaFactory();
+  mediaList = mediaByPhotographer.map(media => {
+    if (media.video) {
+      return factory.createMedia("video", media);
+    } else {
+      return factory.createMedia("image", media);
+    }
+  });
   createMedia(mediaList);
+  createCounter(photographer);
+  assignOptionsalues();
+  const selectElement = document.querySelector(".select__button--native");
+  selectElement.addEventListener("change", event => {
+    console.log(event.target.value);
+    selectOption(event.target.value);
+  });
 });
 
 function getId() {
@@ -19,7 +35,13 @@ function getId() {
   let id = parseInt(paramId, 10);
   return id;
 }
-
+function createCounter(photographer) {
+  const elCounter = document.querySelector(".counter");
+  const reducer = (accumulator, currentMedia) =>
+    accumulator + parseInt(currentMedia.likes, 10);
+  numberOfLikes = mediaList.reduce(reducer, 0);
+  elCounter.innerHTML = `<p class="counter_text"> ${numberOfLikes} &hearts;</p> <p class="counter_text">${photographer.price}/jour </p>`;
+}
 function createPhotographerBanner(photographer) {
   const banner = document.createElement("article");
   banner.classList.add("photograph-header");
@@ -28,58 +50,57 @@ function createPhotographerBanner(photographer) {
     <h1 class="photographer-profile__name">${photographer.name}</h1>
     <p class="photographer-profile__location">${photographer.city}, ${photographer.country}</p>
     <p class="photographer-profile__tagline">${photographer.tagline}</p>
+    <div class="photographer-profile__taglist"></div>
     </div>
-    <button class="button" onclick="buildContactModal()">Contactez moi</button>
     <img class="photograph-header__user" src="/public/img/Photographers-ID/${photographer.portrait}">
     `;
   const section = document.getElementById("banner");
   section.appendChild(banner);
+  const taglist = document.querySelector(".photographer-profile__taglist");
+  showTags(photographer.tags, taglist, false);
 }
 
 function createMedia(mediaList) {
-  const gallery = document.getElementById("gallery");
   mediaList.forEach(media => {
-    const factory = new MediaFactory();
-    let thumb;
-    let f;
-    if (media.video) {
-      const video = factory.createMedia("video", media);
-      thumb = video.buildThumb();
-      f = video.buildSlide.bind(video);
-    } else {
-      const image = factory.createMedia("image", media);
-      thumb = image.buildThumb();
-      f = image.buildSlide.bind(image);
-    }
-    thumb.addEventListener("click", f);
-    gallery.appendChild(thumb);
+    media.buildThumb();
   });
 }
-async function sortByTitle() {
-  console.log("sort by title");
-  resetGallery();
-  sortedMedias = mediaList.sort((a, b) =>
-    a.title > b.title ? 1 : b.title > a.title ? -1 : 0
-  );
-  console.log(sortedMedias);
-  createMedia(sortedMedias);
-}
-async function sortByPopularity() {
-  console.log("sort by popularity");
-  resetGallery();
-  sortedMedias = mediaList.sort(function(a, b) {
-    return a.likes - b.likes;
+function assignOptionsalues() {
+  const optionsEl = document.querySelectorAll(".option");
+  optionsEl.forEach((element, index) => {
+    element.textContent = options[index];
+    element.dataset.value = options[index];
+    element.addEventListener("click", getSortingOption);
   });
-  console.log(sortedMedias);
-  createMedia(sortedMedias);
 }
-async function sortByDate() {
-  console.log("sort by date");
+function getSortingOption(e) {
+  let value = e.target.dataset.value;
+  selectOption(value);
+}
+function selectOption(value) {
+  // let value = e.target.dataset.value;
+  let index = options.indexOf(value);
+  options.splice(index, 1);
+  options.splice(0, 0, value);
+  assignOptionsalues();
+  sortBy(value);
+}
+
+function sortBy(param) {
   resetGallery();
-  sortedMedias = mediaList.sort(function(a, b) {
-    return new Date(a.date) - new Date(b.date);
-  });
-  console.log(sortedMedias);
+  if (param === "Titre") {
+    sortedMedias = mediaList.sort((a, b) =>
+      a.title > b.title ? 1 : b.title > a.title ? -1 : 0
+    );
+  } else if (param === "Date") {
+    sortedMedias = mediaList.sort(function(a, b) {
+      return new Date(a.date) - new Date(b.date);
+    });
+  } else if (param === "Popularité") {
+    sortedMedias = mediaList.sort(function(a, b) {
+      return b.likes - a.likes;
+    });
+  }
   createMedia(sortedMedias);
 }
 function resetGallery() {
