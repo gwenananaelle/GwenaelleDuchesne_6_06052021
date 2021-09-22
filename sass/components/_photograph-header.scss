@@ -1,18 +1,39 @@
 .photograph-header {
-  width: 1240px;
-  height: 313px;
-  background: #fafafa;
-  margin: auto;
-  padding: 56px 50px;
+  padding: 20px;
   position: relative;
+  @include desktop {
+    max-width: 1240px;
+    height: 313px;
+    background: #fafafa;
+    margin: auto;
+    padding: 56px 50px;
+    position: relative;
+  }
   &__user {
     position: absolute;
-    right: 50px;
-    top: 56px;
-    height: 200px;
-    width: 200px;
+    right: 20px;
+    top: 0;
+    height: 100px;
+    width: 100px;
     background: #c4c4c4;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
     border-radius: 50%;
+    object-fit: cover;
+    @include desktop {
+      right: 50px;
+      top: 56px;
+      height: 200px;
+      width: 200px;
+    }
+  }
+  &__button {
+    position: sticky;
+    top: 90%;
+    left: calc(50% - 85px);
+    @include desktop {
+      position: absolute;
+      top: 63px;
+      left: 550px;
+    }
   }
 }

@@ -9,22 +9,23 @@
   }
 }
 @mixin button {
+  height: 35px;
   width: 170px;
-  height: 69px;
+  font-family: DM Sans;
+  font-size: 18px;
+  line-height: 23px;
+  letter-spacing: 0em;
+  text-align: center;
   background: #911c1c;
-  padding: 11px 21px;
   border: none;
   border-radius: 5px;
-  font-family: DM Sans;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 20px;
-  line-height: 26px;
-  /* identical to box height */
-
-  // display: flex;
-  // align-items: center;
-  // text-align: center;
+  @include desktop {
+    width: 170px;
+    height: 69px;
+    font-size: 20px;
+    line-height: 26px;
+    // padding: 11px 21px;
+  }
   color: #ffffff;
   &:hover,
   &:focus {
@@ -43,5 +44,5 @@
   background: #ffffff;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }

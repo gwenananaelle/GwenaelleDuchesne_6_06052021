@@ -1,11 +1,14 @@
 .card {
-  margin: 72px;
+  margin-bottom: 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   flex-wrap: nowrap;
   align-items: center;
   align-content: center;
+  @include desktop {
+    margin: 72px;
+  }
   &__link {
     display: flex;
     flex-direction: column;

@@ -1,11 +1,65 @@
+.gallery {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  justify-content: space-between;
+  align-items: stretch;
+  @include desktop {
+    margin-top: 58px;
+  }
+}
 .thumb-imgfull {
-  width: 350px;
-  height: 351px;
+  margin: 10px 20px;
+  width: 335px;
+  height: 218px;
   object-fit: cover;
-  &_img {
-    height: 300px;
+  @include desktop {
+    margin: 10px 0;
     width: 350px;
+    height: 351px;
+  }
+  &__media {
+    margin-bottom: 10px;
+    width: 335px;
+    height: 190px;
     object-fit: cover;
     border-radius: 5px;
+    @include desktop {
+      height: 300px;
+      width: 350px;
+    }
+  }
+  &__title {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: calc(100% - 70px);
+    display: inline-block;
+    margin-bottom: 10px;
+    font-family: DM Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    color: #911c1c;
+    @include desktop {
+      font-size: 24px;
+      line-height: 31px;
+    }
+  }
+  &__likes {
+    float: right;
+    font-family: DM Sans;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: right;
+    color: #911c1c;
+    @include desktop {
+      font-size: 24px;
+      line-height: 31px;
+    }
   }
 }

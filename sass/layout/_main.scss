@@ -1,0 +1,7 @@
+.main {
+  margin: auto;
+  height: 100%;
+  @include desktop {
+    width: calc(100% - 200px);
+  }
+}

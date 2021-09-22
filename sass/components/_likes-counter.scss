@@ -1,0 +1,28 @@
+.counter {
+  display: none;
+  @include desktop {
+    padding-top: 21px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: space-around;
+    align-items: flex-start;
+    background: #db8876;
+    border-radius: 5px;
+    height: 89px;
+    width: 376px;
+    position: sticky;
+    top: calc(100% - 68px);
+    left: calc(100% - 412px);
+    &_text {
+      font-family: DM Sans;
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 31px;
+      letter-spacing: 0em;
+      text-align: center;
+    }
+  }
+}

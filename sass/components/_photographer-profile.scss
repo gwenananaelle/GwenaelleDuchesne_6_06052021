@@ -4,24 +4,44 @@
     font-family: DM Sans;
     font-style: normal;
     font-weight: normal;
-    font-size: 64px;
-    line-height: 83px;
+    font-size: 36px;
+    line-height: 47px;
     color: #d3573c;
+    @include desktop {
+      font-size: 64px;
+      line-height: 83px;
+    }
   }
   &__location {
     font-family: DM Sans;
     font-style: normal;
     font-weight: normal;
-    font-size: 24px;
-    line-height: 31px;
+
     color: #901c1c;
+    @include desktop {
+      font-size: 24px;
+      line-height: 31px;
+    }
   }
   &__tagline {
     font-family: DM Sans;
     font-style: normal;
     font-weight: normal;
-    font-size: 18px;
-    line-height: 23px;
+    font-size: 13px;
+    line-height: 17px;
     color: #525252;
+    @include desktop {
+      font-size: 18px;
+      line-height: 23px;
+    }
+  }
+  &__taglist {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-content: center;
+    flex-direction: row;
   }
 }
