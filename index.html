@@ -12,17 +12,28 @@
       href="public/css/main.css"
     />
     <script src="main.js"></script>
+    <script src="home.js"></script>
   </head>
   <body>
-    <header class="header">
-      <a href="index.html" class="header__logo">
-        <img src="../public/img/logo.svg" alt="" />
+    <a href="#maincontent" class="content-button">Passer au contenu</a>
+    <header class="header" role="banner">
+      <a href="index.html" role="image-link">
+        <img
+          src="../public/img/logo.svg"
+          alt="Fisheye Home page"
+          class="header__logo"
+        />
       </a>
-      <h1 class="header__title">Nos photographes</h1>
+      <nav
+        aria-label="photographer categories"
+        role="navigation"
+        class="header__nav"
+        tabindex="0"
+      ></nav>
     </header>
-    <main>
+    <main id="maincontent" class="main">
+      <h1 class="header__title">Nos photographes</h1>
       <section id="photographers" class="section-photographers"></section>
     </main>
-    <footer></footer>
   </body>
 </html>
