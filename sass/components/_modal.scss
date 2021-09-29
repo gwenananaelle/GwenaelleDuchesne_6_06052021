@@ -1,3 +1,9 @@
 .modal {
   @include modal;
+  & ~ div,
+  & ~ section,
+  & ~ button {
+    visibility: hidden;
+    display: none;
+  }
 }

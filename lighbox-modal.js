@@ -19,6 +19,8 @@ function plusSlide(n) {
 
 function closeModal() {
   window.removeEventListener("keyup", keyControl);
+  let header = document.querySelector("header");
+  header.classList.remove("hidden");
   const modal = document.querySelector(".modal");
   modal.parentNode.removeChild(modal);
 }

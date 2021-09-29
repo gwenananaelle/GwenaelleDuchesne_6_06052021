@@ -36,6 +36,10 @@ button {
   -moz-appearance: none;
 }
 
+.hidden {
+  visibility: hidden;
+}
+
 body {
   font-family: "DM Sans", sans-serif;
 }
@@ -562,6 +566,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-start;
+}
+.modal ~ div, .modal ~ section, .modal ~ button {
+  visibility: hidden;
+  display: none;
 }
 
 .lightbox-modal {

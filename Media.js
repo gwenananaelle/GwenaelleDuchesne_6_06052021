@@ -43,7 +43,7 @@ Media.prototype.buildSlide = function(type, url) {
             </div>
          `;
   window.addEventListener("keyup", keyControl);
-  main.appendChild(modal);
+  main.prepend(modal);
   document
     .querySelector(".lightbox-modal__next")
     .addEventListener("click", function() {
@@ -57,6 +57,8 @@ Media.prototype.buildSlide = function(type, url) {
   document
     .querySelector(".lightbox-modal__close")
     .addEventListener("click", closeModal);
+  let header = document.querySelector("header");
+  header.setAttribute("class", "hidden");
   document.querySelector(".lightbox-modal").focus();
 };
 
