@@ -22,3 +22,13 @@ function showTags(tags, parent, clickable) {
     parent.appendChild(tagItem);
   });
 }
+/**
+ * close modal
+ */
+function closeModal() {
+  window.removeEventListener("keyup", keyControl);
+  const header = document.querySelector("header");
+  header.classList.remove("hidden");
+  const modal = document.querySelector(".modal");
+  modal.parentNode.removeChild(modal);
+}

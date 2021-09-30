@@ -70,8 +70,8 @@ Media.prototype.buildSlide = function(type, url) {
   document
     .querySelector(".lightbox-modal__close")
     .addEventListener("click", closeModal);
-  let header = document.querySelector("header");
-  header.setAttribute("class", "hidden");
+  const header = document.querySelector("header");
+  header.classList.add("hidden");
   document.querySelector(".lightbox-modal").focus();
 };
 
@@ -83,6 +83,7 @@ Media.prototype.buildSlide = function(type, url) {
 Media.prototype.buildThumb = function(type, url) {
   const thumb = document.createElement("article");
   thumb.classList.add("thumb-imgfull");
+  thumb.setAttribute("role", "link");
   const media = document.createElement(`${type}`);
   media.src = url;
   media.alt = this.alt;

@@ -36,4 +36,8 @@ button {
 }
 .hidden {
   visibility: hidden;
+  display: none;
+}
+[role="link"] {
+  cursor: pointer;
 }

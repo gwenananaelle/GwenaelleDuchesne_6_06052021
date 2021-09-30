@@ -60,8 +60,8 @@ function buildContactModal() {
           <button class="contact-modal__close" aria-labelledby="button-close-label"><span id="button-close-label" hidden>Close</span>${closeButton}</button>
         </div>
   `;
-  let header = document.querySelector("header");
-  header.setAttribute("class", "hidden");
+  const header = document.querySelector("header");
+  header.classList.add("hidden");
   main.prepend(modal);
   document
     .querySelector(".contact-modal__close")

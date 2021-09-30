@@ -20,16 +20,7 @@ function plusSlide(n) {
   <${mediaList[index].type} id="${mediaList[index].id}" src="${mediaList[index].src}" class="lightbox-modal__media"></${mediaList[index].type}>
   <figcaption class="lightbox-modal__caption">${mediaList[index].title}</figcaption>`;
 }
-/**
- * close the modal
- */
-function closeModal() {
-  window.removeEventListener("keyup", keyControl);
-  let header = document.querySelector("header");
-  header.classList.remove("hidden");
-  const modal = document.querySelector(".modal");
-  modal.parentNode.removeChild(modal);
-}
+
 /**
  * add keyboard control to the lighbox
  * @param {event} e
