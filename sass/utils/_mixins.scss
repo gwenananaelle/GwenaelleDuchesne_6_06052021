@@ -55,7 +55,9 @@
   }
   color: #ffffff;
   &:hover,
-  &:focus {
+  &:focus,
+  &:active {
+    color: #000000;
     background: $primary-color;
   }
 }

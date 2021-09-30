@@ -331,7 +331,8 @@ body {
     line-height: 1.625rem;
   }
 }
-.button:hover, .button:focus {
+.button:hover, .button:focus, .button:active {
+  color: #000000;
   background: #db8876;
 }
 
@@ -448,7 +449,8 @@ body {
     line-height: 1.625rem;
   }
 }
-.content-button:hover, .content-button:focus {
+.content-button:hover, .content-button:focus, .content-button:active {
+  color: #000000;
   background: #db8876;
 }
 .content-button:focus {
