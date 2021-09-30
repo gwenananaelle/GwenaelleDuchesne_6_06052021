@@ -4,7 +4,17 @@ window.addEventListener("load", async () => {
   photographers = data.photographers;
   medias = data.medias;
   updatePhotographersRendering();
+  const tag = getTag();
+  if (tag) {
+    getPhotographersByTag(tag);
+  }
 });
+
+function getTag() {
+  let params = new URLSearchParams(document.location.search.substring(1));
+  let tag = params.get("tag");
+  return tag;
+}
 
 function getPhotographersByTag(tag) {
   clearPhotographers();

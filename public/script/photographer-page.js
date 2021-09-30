@@ -24,7 +24,6 @@ window.addEventListener("load", async () => {
   assignOptionsalues();
   const selectElement = document.querySelector(".select__button--native");
   selectElement.addEventListener("change", event => {
-    console.log(event.target.value);
     selectOption(event.target.value);
   });
 });
@@ -57,7 +56,7 @@ function createPhotographerBanner(photographer) {
   const section = document.getElementById("banner");
   section.appendChild(banner);
   const taglist = document.querySelector(".photographer-profile__taglist");
-  showTags(photographer.tags, taglist, false);
+  showTags(photographer.tags, taglist, true);
 }
 
 function createMedia(mediaList) {
@@ -78,7 +77,6 @@ function getSortingOption(e) {
   selectOption(value);
 }
 function selectOption(value) {
-  // let value = e.target.dataset.value;
   let index = options.indexOf(value);
   options.splice(index, 1);
   options.splice(0, 0, value);
