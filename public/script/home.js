@@ -61,7 +61,7 @@ function showPhotographers(photographer) {
   card.classList.add("card");
   card.innerHTML = `
       <a class="card__link" href="photographer-page.html?id=${photographer.id}" role="link">
-        <img class="card__img" src="/public/img/Photographers-ID/${photographer.portrait}">
+        <img class="card__img" src="public/img/Photographers-ID/${photographer.portrait}">
         <h2 class="card__name">${photographer.name}</h2>
       </a>
       <p class="card__location">${photographer.city}, ${photographer.country}</p>

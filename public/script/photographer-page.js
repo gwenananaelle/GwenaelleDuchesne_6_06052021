@@ -67,7 +67,7 @@ function createPhotographerBanner(photographer) {
     <p class="photographer-profile__tagline">${photographer.tagline}</p>
     <div class="photographer-profile__taglist"></div>
     </div>
-    <img class="photograph-header__user" src="/public/img/Photographers-ID/${photographer.portrait}">
+    <img class="photograph-header__user" src="public/img/Photographers-ID/${photographer.portrait}">
     `;
   const section = document.getElementById("banner");
   section.appendChild(banner);

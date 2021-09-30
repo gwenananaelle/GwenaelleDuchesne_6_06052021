@@ -6,7 +6,7 @@ class Video extends Media {
   constructor(media) {
     super(media);
     this.type = "video";
-    this.src = `/public/img/${media.photographerId}/${media.video}`;
+    this.src = `public/img/${media.photographerId}/${media.video}`;
   }
   buildSlide() {
     super.buildSlide(this.type, this.src);
