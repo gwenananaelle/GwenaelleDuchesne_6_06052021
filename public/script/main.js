@@ -1,6 +1,12 @@
 let photographers = null;
 let medias = null;
 
+/**
+ * insert HTML for the tags
+ * @param {String} tags
+ * @param {Object} parent element
+ * @param {Boolean} clickable
+ */
 function showTags(tags, parent, clickable) {
   tags.forEach(tag => {
     const tagItem = document.createElement("span");

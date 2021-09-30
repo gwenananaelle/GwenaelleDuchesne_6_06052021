@@ -1,3 +1,6 @@
+/**
+ * initiates photographers and media variables to build the page
+ */
 window.addEventListener("load", async () => {
   const response = await fetch("FishEyeData.json");
   const data = await response.json();
@@ -10,12 +13,19 @@ window.addEventListener("load", async () => {
   }
 });
 
+/**
+ * get tag if there is one in the url parameters
+ * @return {string} tag
+ */
 function getTag() {
   let params = new URLSearchParams(document.location.search.substring(1));
   let tag = params.get("tag");
   return tag;
 }
-
+/**
+ * filters the photographers by tag
+ * @param {String} tag
+ */
 function getPhotographersByTag(tag) {
   clearPhotographers();
   const photographersWithTag = photographers.filter(photographer =>
@@ -24,7 +34,10 @@ function getPhotographersByTag(tag) {
   photographersWithTag.forEach(photographer => showPhotographers(photographer));
 }
 
-async function updatePhotographersRendering() {
+/**
+ * creates Card and a taglist for each photographer
+ */
+function updatePhotographersRendering() {
   let allTags = [];
   photographers.forEach(photographer => {
     showPhotographers(photographer);
@@ -39,6 +52,10 @@ async function updatePhotographersRendering() {
   showTags(allTags, parent, true);
 }
 
+/**
+ * Insert HTML to create a card for the photographer
+ * @param {Object} photographer
+ */
 function showPhotographers(photographer) {
   const card = document.createElement("article");
   card.classList.add("card");
@@ -59,6 +76,9 @@ function showPhotographers(photographer) {
   showTags(photographer.tags, taglist, true);
 }
 
+/**
+ * Remove HTML for all photographer's cards
+ */
 function clearPhotographers() {
   const section = document.getElementById("photographers");
   section.innerHTML = "";

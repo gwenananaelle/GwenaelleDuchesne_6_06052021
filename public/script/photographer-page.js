@@ -3,6 +3,9 @@ let mediaList = null;
 const id = getId();
 let options = ["Popularité", "Date", "Titre"];
 
+/**
+ * initiate photographer, mediaList and generate the page during load
+ */
 window.addEventListener("load", async () => {
   const response = await fetch("FishEyeData.json");
   const data = await response.json();
@@ -28,12 +31,20 @@ window.addEventListener("load", async () => {
   });
 });
 
+/**
+ * get id from url parameters
+ * @returns {Number} id - photographer id
+ */
 function getId() {
   let params = new URLSearchParams(document.location.search.substring(1));
   let paramId = params.get("id");
   let id = parseInt(paramId, 10);
   return id;
 }
+/**
+ * Insert HTML with number of likes and price per day
+ * @param {Object} photographer
+ */
 function createCounter(photographer) {
   const elCounter = document.querySelector(".counter");
   const reducer = (accumulator, currentMedia) =>
@@ -41,6 +52,11 @@ function createCounter(photographer) {
   numberOfLikes = mediaList.reduce(reducer, 0);
   elCounter.innerHTML = `<p class="counter_text"> ${numberOfLikes} &hearts;</p> <p class="counter_text">${photographer.price}/jour </p>`;
 }
+
+/**
+ * Insert HTML to create the photographer banner
+ * @param {Object} photographer
+ */
 function createPhotographerBanner(photographer) {
   const banner = document.createElement("article");
   banner.classList.add("photograph-header");
@@ -58,12 +74,18 @@ function createPhotographerBanner(photographer) {
   const taglist = document.querySelector(".photographer-profile__taglist");
   showTags(photographer.tags, taglist, true);
 }
-
+/**
+ * for each Media in Medialist creates a thumbnail
+ * @param {Array} mediaList
+ */
 function createMedia(mediaList) {
   mediaList.forEach(media => {
     media.buildThumb();
   });
 }
+/**
+ * assign value for each sorted by select options
+ */
 function assignOptionsalues() {
   const optionsEl = document.querySelectorAll(".option");
   optionsEl.forEach((element, index) => {
@@ -72,10 +94,18 @@ function assignOptionsalues() {
     element.addEventListener("click", getSortingOption);
   });
 }
+/**
+ * get selected option
+ * @param {event} e
+ */
 function getSortingOption(e) {
   let value = e.target.dataset.value;
   selectOption(value);
 }
+/**
+ * change options order for the sorted by selct button
+ * @param {String} value
+ */
 function selectOption(value) {
   let index = options.indexOf(value);
   options.splice(index, 1);
@@ -84,6 +114,10 @@ function selectOption(value) {
   sortBy(value);
 }
 
+/**
+ * sorts the media depending on the otpion selected
+ * @param {String} param
+ */
 function sortBy(param) {
   resetGallery();
   if (param === "Titre") {
@@ -101,6 +135,9 @@ function sortBy(param) {
   }
   createMedia(sortedMedias);
 }
+/**
+ * remove HTML of the gallery
+ */
 function resetGallery() {
   const gallery = document.getElementById("gallery");
   gallery.innerHTML = "";

@@ -1,3 +1,6 @@
+/**
+ * insert HTML to create a contact form modal
+ */
 function buildContactModal() {
   const main = document.getElementById("main");
   const modal = document.createElement("section");

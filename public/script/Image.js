@@ -1,3 +1,7 @@
+/**
+ * Class representing an image
+ * @extends Media
+ */
 class Image extends Media {
   constructor(media) {
     super(media);

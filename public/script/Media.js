@@ -1,3 +1,7 @@
+/**
+ * creates a Media
+ * @class
+ */
 class Media {
   constructor(media) {
     this.id = media.id;
@@ -17,9 +21,18 @@ class Media {
     };
   }
 }
+/**
+ * insert HTML to create a lighbox
+ * @param {String} type
+ * @param {String} url
+ */
 Media.prototype.buildSlide = function(type, url) {
   const main = document.getElementById("main");
   const modal = document.createElement("section");
+  let controls = "";
+  if (type === "video") {
+    controls = "controls";
+  }
   const closeButton = `
 <svg aria-hidden="true" focusable="false" width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M42 4.23L37.77 0L21 16.77L4.23 0L0 4.23L16.77 21L0 37.77L4.23 42L21 25.23L37.77 42L42 37.77L25.23 21L42 4.23Z" fill="#911C1C"/>
@@ -34,7 +47,7 @@ Media.prototype.buildSlide = function(type, url) {
   modal.innerHTML = `
             <div id="lightbox-modal" class="lightbox-modal" role="dialog" aria-modal="true" aria-label=”image closeup view”>
                 <figure id="lightbox__container" class="lightbox-modal__container">
-                    <${type} id="${this.id}" src="${url}" alt="${this.alt}" class="lightbox-modal__media"></${type}>
+                    <${type} ${controls} id="${this.id}" src="${url}" alt="${this.alt}" class="lightbox-modal__media"></${type}>
                     <figcaption class="lightbox-modal__caption">${this.title}</figcaption>
                 </figure>
                 <button class="lightbox-modal__next" aria-labelledby="button-next-label"><span id="button-next-label" hidden>Next image</span>${chevron}</button>
@@ -62,6 +75,11 @@ Media.prototype.buildSlide = function(type, url) {
   document.querySelector(".lightbox-modal").focus();
 };
 
+/**
+ * insert HTML for media thumb
+ * @param {String} type
+ * @param {String} url
+ */
 Media.prototype.buildThumb = function(type, url) {
   const thumb = document.createElement("article");
   thumb.classList.add("thumb-imgfull");

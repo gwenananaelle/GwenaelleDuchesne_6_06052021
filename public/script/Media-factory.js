@@ -1,3 +1,7 @@
+/**
+ * Creates a MediaFactory
+ * @class
+ */
 class MediaFactory {
   createMedia(type, mediaObject) {
     let media;

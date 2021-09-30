@@ -1,3 +1,7 @@
+/**
+ * Class representing a video
+ * @extends Media
+ */
 class Video extends Media {
   constructor(media) {
     super(media);
