@@ -1,6 +1,6 @@
 .contact-modal {
   position: relative;
-  background: #db8876;
+  background: $primary-color;
   margin: auto;
   height: 100%;
   width: 100%;
@@ -9,42 +9,30 @@
     height: 900px;
   }
   &__title {
-    font-family: DM Sans;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 36px;
-    line-height: 47px;
+    @include font-X;
     padding: 17px 20px;
     @include desktop {
-      font-size: 64px;
-      line-height: 83px;
+      @include font-XX;
       padding: 15px 35px;
     }
   }
   &__form {
-    display: flex;
+    @include flex;
     flex-direction: column;
-    flex-wrap: nowrap;
     padding: 0 20px;
     @include desktop {
       padding: 0 35px;
     }
     &__label {
-      font-family: DM Sans;
-      font-style: normal;
-      font-weight: normal;
-      font-size: 24px;
-      line-height: 31px;
+      @include font-M;
       color: #312e2e;
       @include desktop {
-        font-size: 36px;
-        line-height: 47px;
+        @include font-X;
       }
     }
     &__input {
-      font-family: DM Sans;
-      font-size: 36px;
-      line-height: 47px;
+      font-family: $font-stack;
+      @include font-X;
       border: none;
       background: #ffffff;
       border-radius: 5px;
@@ -55,12 +43,12 @@
       }
     }
     &__textarea {
-      font-family: DM Sans;
-      font-size: 34px;
+      font-family: $font-stack;
+      font-size: 2rem;
       border: none;
       background: #ffffff;
       border-radius: 5px;
-      line-height: 34px;
+      line-height: 2.125rem;
       padding: 0;
     }
     &__button {

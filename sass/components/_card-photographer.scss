@@ -1,16 +1,15 @@
 .card {
   margin-bottom: 40px;
-  display: flex;
+  @include flex;
   flex-direction: column;
   justify-content: center;
-  flex-wrap: nowrap;
   align-items: center;
   align-content: center;
   @include desktop {
     margin: 72px;
   }
   &__link {
-    display: flex;
+    @include flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -23,14 +22,14 @@
     object-fit: cover;
   }
   &__name {
-    font-family: "DM Sans", sans-serif;
-    font-size: 36px;
+    font-family: $font-stack;
+    font-size: 2rem;
     text-align: center;
     color: $primary-color;
     line-height: 46.87px;
   }
   &__location {
-    font-size: 13px;
+    font-size: 0.813rem;
     text-align: center;
     color: $secondary-color;
     line-height: 16.93px;
@@ -38,28 +37,25 @@
   }
   &__tagline {
     text-align: center;
-    font-size: 10px;
+    font-size: 0.625rem;
     line-height: 13.02px;
   }
   &__price {
-    font-style: normal;
-    font-weight: normal;
-    font-size: 9px;
+    font-size: 0.563rem;
     line-height: 12px;
     text-align: center;
-    color: #757575;
+    color: $dark-grey;
   }
 }
 .span-tag {
   padding: 0 4px;
-  height: 16px;
-  border: 0.5px solid #c4c4c4;
+  height: 1rem;
+  border: 0.5px solid $clear-grey;
   box-sizing: border-box;
   border-radius: 11px;
-  font-style: normal;
   font-weight: 500;
-  font-size: 12px;
-  line-height: 16px;
+  font-size: 0.75rem;
+  line-height: 1rem;
   text-align: center;
   color: $secondary-color;
 }

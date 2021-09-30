@@ -1,47 +1,35 @@
 .photographer-profile {
   height: 100%;
   &__name {
-    font-family: DM Sans;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 36px;
-    line-height: 47px;
-    color: #d3573c;
+    @include font-X;
+    color: $primary-color;
     @include desktop {
-      font-size: 64px;
-      line-height: 83px;
+      @include font-XX;
     }
   }
   &__location {
-    font-family: DM Sans;
-    font-style: normal;
-    font-weight: normal;
-
-    color: #901c1c;
+    @include font-S;
+    color: $secondary-color;
     @include desktop {
-      font-size: 24px;
-      line-height: 31px;
+      @include font-M;
     }
   }
   &__tagline {
-    font-family: DM Sans;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 13px;
-    line-height: 17px;
-    color: #525252;
+    font-family: $font-stack;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    color: $dark-grey;
     @include desktop {
-      font-size: 18px;
-      line-height: 23px;
+      font-size: 1.125rem;
+      line-height: 1.438rem;
     }
   }
   &__taglist {
     padding: 0;
-    display: flex;
+    @include flex;
     align-items: center;
     justify-content: flex-start;
     flex-wrap: wrap;
     align-content: center;
-    flex-direction: row;
   }
 }

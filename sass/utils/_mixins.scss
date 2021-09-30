@@ -8,28 +8,55 @@
     @content;
   }
 }
+@mixin font-S {
+  font-family: $font-stack;
+  font-size: 0.9rem;
+  line-height: 1.1rem;
+}
+@mixin font-M {
+  font-family: $font-stack;
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+@mixin font-X {
+  font-family: $font-stack;
+  font-size: 2.25rem;
+  line-height: 3rem;
+}
+@mixin font-XX {
+  font-family: $font-stack;
+  font-size: 4rem;
+  line-height: 5rem;
+}
+@mixin flex {
+  flex-direction: row;
+  flex-wrap: nowrap;
+  display: flex;
+  align-content: normal;
+  justify-content: normal;
+  align-items: normal;
+}
 @mixin button {
   height: 35px;
   width: 170px;
-  font-family: DM Sans;
-  font-size: 18px;
+  font-family: $font-stack;
+  font-size: 1.125rem;
   line-height: 23px;
   letter-spacing: 0em;
   text-align: center;
-  background: #911c1c;
+  background: $secondary-color;
   border: none;
   border-radius: 5px;
   @include desktop {
     width: 170px;
     height: 69px;
-    font-size: 20px;
-    line-height: 26px;
-    // padding: 11px 21px;
+    font-size: 1.25rem;
+    line-height: 1.625rem;
   }
   color: #ffffff;
   &:hover,
   &:focus {
-    background: #db8876;
+    background: $primary-color;
   }
 }
 

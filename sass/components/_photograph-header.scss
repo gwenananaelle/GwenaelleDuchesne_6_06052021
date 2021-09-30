@@ -4,7 +4,7 @@
   @include desktop {
     max-width: 1240px;
     height: 313px;
-    background: #fafafa;
+    background: $clear-grey;
     margin: auto;
     padding: 56px 50px;
     position: relative;
@@ -15,7 +15,7 @@
     top: 0;
     height: 100px;
     width: 100px;
-    background: #c4c4c4;
+    background: $clear-grey;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
     border-radius: 50%;
     object-fit: cover;

@@ -2,13 +2,11 @@
   display: none;
   @include desktop {
     padding-top: 21px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
+    @include flex;
     align-content: center;
     justify-content: space-around;
     align-items: flex-start;
-    background: #db8876;
+    background: $primary-color;
     border-radius: 5px;
     height: 89px;
     width: 376px;
@@ -16,11 +14,7 @@
     top: calc(100% - 68px);
     left: calc(100% - 412px);
     &_text {
-      font-family: DM Sans;
-      font-size: 24px;
-      font-style: normal;
-      font-weight: 500;
-      line-height: 31px;
+      @include font-M;
       letter-spacing: 0em;
       text-align: center;
     }

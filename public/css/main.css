@@ -42,6 +42,8 @@ button {
 
 body {
   font-family: "DM Sans", sans-serif;
+  font-style: normal;
+  font-weight: normal;
 }
 
 .header {
@@ -66,14 +68,16 @@ body {
   position: absolute;
   top: 50px;
   right: 22px;
-  font-size: 14px;
-  line-height: 18.23px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.1rem;
   color: #901c1c;
 }
 @media screen and (min-width: 1023px) {
   .header__title {
-    font-size: 36px;
-    line-height: 47px;
+    font-family: "DM Sans", sans-serif;
+    font-size: 2.25rem;
+    line-height: 3rem;
   }
 }
 .header__nav {
@@ -92,10 +96,14 @@ body {
 
 .card {
   margin-bottom: 40px;
+  flex-direction: row;
+  flex-wrap: nowrap;
   display: flex;
+  align-content: normal;
+  justify-content: normal;
+  align-items: normal;
   flex-direction: column;
   justify-content: center;
-  flex-wrap: nowrap;
   align-items: center;
   align-content: center;
 }
@@ -105,7 +113,12 @@ body {
   }
 }
 .card__link {
+  flex-direction: row;
+  flex-wrap: nowrap;
   display: flex;
+  align-content: normal;
+  justify-content: normal;
+  align-items: normal;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -119,13 +132,13 @@ body {
 }
 .card__name {
   font-family: "DM Sans", sans-serif;
-  font-size: 36px;
+  font-size: 2rem;
   text-align: center;
-  color: #d3573c;
+  color: #db8876;
   line-height: 46.87px;
 }
 .card__location {
-  font-size: 13px;
+  font-size: 0.813rem;
   text-align: center;
   color: #901c1c;
   line-height: 16.93px;
@@ -133,28 +146,25 @@ body {
 }
 .card__tagline {
   text-align: center;
-  font-size: 10px;
+  font-size: 0.625rem;
   line-height: 13.02px;
 }
 .card__price {
-  font-style: normal;
-  font-weight: normal;
-  font-size: 9px;
+  font-size: 0.563rem;
   line-height: 12px;
   text-align: center;
-  color: #757575;
+  color: #525252;
 }
 
 .span-tag {
   padding: 0 4px;
-  height: 16px;
-  border: 0.5px solid #c4c4c4;
+  height: 1rem;
+  border: 0.5px solid #fafafa;
   box-sizing: border-box;
   border-radius: 11px;
-  font-style: normal;
   font-weight: 500;
-  font-size: 12px;
-  line-height: 16px;
+  font-size: 0.75rem;
+  line-height: 1rem;
   text-align: center;
   color: #901c1c;
 }
@@ -179,7 +189,7 @@ body {
   top: 0;
   height: 100px;
   width: 100px;
-  background: #c4c4c4;
+  background: #fafafa;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
   border-radius: 50%;
   object-fit: cover;
@@ -209,58 +219,65 @@ body {
   height: 100%;
 }
 .photographer-profile__name {
-  font-family: DM Sans;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 36px;
-  line-height: 47px;
-  color: #d3573c;
+  font-family: "DM Sans", sans-serif;
+  font-size: 2.25rem;
+  line-height: 3rem;
+  color: #db8876;
 }
 @media screen and (min-width: 1023px) {
   .photographer-profile__name {
-    font-size: 64px;
-    line-height: 83px;
+    font-family: "DM Sans", sans-serif;
+    font-size: 4rem;
+    line-height: 5rem;
   }
 }
 .photographer-profile__location {
-  font-family: DM Sans;
-  font-style: normal;
-  font-weight: normal;
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.1rem;
   color: #901c1c;
 }
 @media screen and (min-width: 1023px) {
   .photographer-profile__location {
-    font-size: 24px;
-    line-height: 31px;
+    font-family: "DM Sans", sans-serif;
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
 }
 .photographer-profile__tagline {
-  font-family: DM Sans;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 13px;
-  line-height: 17px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.75rem;
+  line-height: 1rem;
   color: #525252;
 }
 @media screen and (min-width: 1023px) {
   .photographer-profile__tagline {
-    font-size: 18px;
-    line-height: 23px;
+    font-size: 1.125rem;
+    line-height: 1.438rem;
   }
 }
 .photographer-profile__taglist {
   padding: 0;
+  flex-direction: row;
+  flex-wrap: nowrap;
   display: flex;
+  align-content: normal;
+  justify-content: normal;
+  align-items: normal;
   align-items: center;
   justify-content: flex-start;
   flex-wrap: wrap;
   align-content: center;
-  flex-direction: row;
 }
 
 .taglist {
   padding: 0;
+  flex-direction: row;
+  flex-wrap: nowrap;
   display: flex;
+  align-content: normal;
+  justify-content: normal;
+  align-items: normal;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
@@ -277,28 +294,26 @@ body {
   border: 0.5px solid #c4c4c4;
   box-sizing: border-box;
   border-radius: 11px;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 16px;
+  font-size: 0.75rem;
+  line-height: 1rem;
   /* identical to box height */
   text-align: center;
   color: #901c1c;
 }
 .taglist__tag:hover, .taglist__tag:focus {
   color: #ffffff;
-  background: #911c1c;
+  background: #901c1c;
 }
 
 .button {
   height: 35px;
   width: 170px;
-  font-family: DM Sans;
-  font-size: 18px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 1.125rem;
   line-height: 23px;
   letter-spacing: 0em;
   text-align: center;
-  background: #911c1c;
+  background: #901c1c;
   border: none;
   border-radius: 5px;
   color: #ffffff;
@@ -307,8 +322,8 @@ body {
   .button {
     width: 170px;
     height: 69px;
-    font-size: 20px;
-    line-height: 26px;
+    font-size: 1.25rem;
+    line-height: 1.625rem;
   }
 }
 .button:hover, .button:focus {
@@ -330,10 +345,9 @@ body {
   .select__label {
     width: 74px;
     height: 23px;
-    font-family: DM Sans;
-    font-style: normal;
+    font-family: "DM Sans", sans-serif;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 1.125rem;
     line-height: 23px;
     color: #000000;
   }
@@ -350,7 +364,7 @@ body {
     left: 0;
     width: 100%;
     height: 69px;
-    background: #911c1c;
+    background: #901c1c;
     border-radius: 5px;
     padding: 9px 10px 6px 10px;
   }
@@ -368,16 +382,15 @@ body {
     padding: 14px 10px;
     width: 100%;
     text-align: left;
-    font-family: DM Sans;
-    font-style: normal;
+    font-family: "DM Sans", sans-serif;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 1.125rem;
     line-height: 23px;
     color: #ffffff;
   }
   .select__button--native {
     height: 69px;
-    background: #911c1c;
+    background: #901c1c;
     border-radius: 5px;
     padding: 9px 10px 6px 10px;
     border: none;
@@ -399,10 +412,9 @@ body {
     padding: 14px 10px;
     text-align: left;
     list-style: none;
-    font-family: DM Sans;
-    font-style: normal;
+    font-family: "DM Sans", sans-serif;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 1.125rem;
     line-height: 23px;
     color: #ffffff;
   }
@@ -413,12 +425,12 @@ body {
   top: -100px;
   height: 35px;
   width: 170px;
-  font-family: DM Sans;
-  font-size: 18px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 1.125rem;
   line-height: 23px;
   letter-spacing: 0em;
   text-align: center;
-  background: #911c1c;
+  background: #901c1c;
   border: none;
   border-radius: 5px;
   color: #ffffff;
@@ -427,8 +439,8 @@ body {
   .content-button {
     width: 170px;
     height: 69px;
-    font-size: 20px;
-    line-height: 26px;
+    font-size: 1.25rem;
+    line-height: 1.625rem;
   }
 }
 .content-button:hover, .content-button:focus {
@@ -452,9 +464,12 @@ body {
 @media screen and (min-width: 1023px) {
   .counter {
     padding-top: 21px;
-    display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
+    display: flex;
+    align-content: normal;
+    justify-content: normal;
+    align-items: normal;
     align-content: center;
     justify-content: space-around;
     align-items: flex-start;
@@ -467,19 +482,21 @@ body {
     left: calc(100% - 412px);
   }
   .counter_text {
-    font-family: DM Sans;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 31px;
+    font-family: "DM Sans", sans-serif;
+    font-size: 1.5rem;
+    line-height: 2rem;
     letter-spacing: 0em;
     text-align: center;
   }
 }
 
 .gallery {
-  display: flex;
   flex-direction: row;
+  flex-wrap: nowrap;
+  display: flex;
+  align-content: normal;
+  justify-content: normal;
+  align-items: normal;
   flex-wrap: wrap;
   align-content: flex-start;
   justify-content: space-between;
@@ -524,33 +541,31 @@ body {
   max-width: calc(100% - 70px);
   display: inline-block;
   margin-bottom: 10px;
-  font-family: DM Sans;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 18px;
-  color: #911c1c;
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.1rem;
+  color: #901c1c;
 }
 @media screen and (min-width: 1023px) {
   .thumb-imgfull__title {
-    font-size: 24px;
-    line-height: 31px;
+    font-family: "DM Sans", sans-serif;
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
 }
 .thumb-imgfull__likes {
   float: right;
-  font-family: DM Sans;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 18px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.1rem;
   text-align: right;
-  color: #911c1c;
+  color: #901c1c;
 }
 @media screen and (min-width: 1023px) {
   .thumb-imgfull__likes {
-    font-size: 24px;
-    line-height: 31px;
+    font-family: "DM Sans", sans-serif;
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
 }
 
@@ -588,10 +603,14 @@ body {
 .lightbox-modal__container {
   width: 100%;
   height: 100%;
+  flex-direction: row;
+  flex-wrap: nowrap;
   display: flex;
+  align-content: normal;
+  justify-content: normal;
+  align-items: normal;
   align-items: center;
   justify-content: center;
-  flex-wrap: nowrap;
   flex-direction: column;
   align-content: center;
 }
@@ -614,14 +633,16 @@ body {
   }
 }
 .lightbox-modal__caption {
-  font-size: 14px;
-  line-height: 18px;
-  color: #911c1c;
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.1rem;
+  color: #901c1c;
 }
 @media screen and (min-width: 1023px) {
   .lightbox-modal__caption {
-    font-size: 24px;
-    line-height: 31px;
+    font-family: "DM Sans", sans-serif;
+    font-size: 1.5rem;
+    line-height: 2rem;
   }
 }
 .lightbox-modal__prev {
@@ -640,7 +661,7 @@ body {
 }
 .lightbox-modal__prev svg {
   transform: rotate(180deg);
-  color: #911c1c;
+  color: #901c1c;
   height: 8.1617393494px;
   width: 13.2266712189px;
 }
@@ -665,7 +686,7 @@ body {
   }
 }
 .lightbox-modal__next svg {
-  color: #911c1c;
+  color: #901c1c;
   height: 8.1617393494px;
   width: 13.2266712189px;
 }
@@ -710,24 +731,27 @@ body {
   }
 }
 .contact-modal__title {
-  font-family: DM Sans;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 36px;
-  line-height: 47px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 2.25rem;
+  line-height: 3rem;
   padding: 17px 20px;
 }
 @media screen and (min-width: 1023px) {
   .contact-modal__title {
-    font-size: 64px;
-    line-height: 83px;
+    font-family: "DM Sans", sans-serif;
+    font-size: 4rem;
+    line-height: 5rem;
     padding: 15px 35px;
   }
 }
 .contact-modal__form {
-  display: flex;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: nowrap;
+  display: flex;
+  align-content: normal;
+  justify-content: normal;
+  align-items: normal;
+  flex-direction: column;
   padding: 0 20px;
 }
 @media screen and (min-width: 1023px) {
@@ -736,23 +760,23 @@ body {
   }
 }
 .contact-modal__form__label {
-  font-family: DM Sans;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 24px;
-  line-height: 31px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 1.5rem;
+  line-height: 2rem;
   color: #312e2e;
 }
 @media screen and (min-width: 1023px) {
   .contact-modal__form__label {
-    font-size: 36px;
-    line-height: 47px;
+    font-family: "DM Sans", sans-serif;
+    font-size: 2.25rem;
+    line-height: 3rem;
   }
 }
 .contact-modal__form__input {
-  font-family: DM Sans;
-  font-size: 36px;
-  line-height: 47px;
+  font-family: "DM Sans", sans-serif;
+  font-family: "DM Sans", sans-serif;
+  font-size: 2.25rem;
+  line-height: 3rem;
   border: none;
   background: #ffffff;
   border-radius: 5px;
@@ -765,12 +789,12 @@ body {
   }
 }
 .contact-modal__form__textarea {
-  font-family: DM Sans;
-  font-size: 34px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 2rem;
   border: none;
   background: #ffffff;
   border-radius: 5px;
-  line-height: 34px;
+  line-height: 2.125rem;
   padding: 0;
 }
 .contact-modal__form__button {
@@ -815,8 +839,12 @@ body {
 }
 
 .section-photographers {
-  display: flex;
   flex-direction: row;
+  flex-wrap: nowrap;
+  display: flex;
+  align-content: normal;
+  justify-content: normal;
+  align-items: normal;
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: flex-start;

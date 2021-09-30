@@ -1,7 +1,7 @@
 .taglist {
   padding: 0;
   // margin: 0;
-  display: flex;
+  @include flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
@@ -12,20 +12,18 @@
     text-transform: capitalize;
     margin: 5px;
     padding: 3px;
-    border: 0.5px solid #c4c4c4;
+    border: 0.5px solid $medium-grey;
     box-sizing: border-box;
     border-radius: 11px;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 16px;
+    font-size: 0.75rem;
+    line-height: 1rem;
     /* identical to box height */
     text-align: center;
     color: $secondary-color;
     &:hover,
     &:focus {
       color: #ffffff;
-      background: #911c1c;
+      background: $secondary-color;
     }
   }
 }

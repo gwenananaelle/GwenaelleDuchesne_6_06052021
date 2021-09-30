@@ -11,10 +11,9 @@
   &__container {
     width: 100%;
     height: 100%;
-    display: flex;
+    @include flex;
     align-items: center;
     justify-content: center;
-    flex-wrap: nowrap;
     flex-direction: column;
     align-content: center;
     @include desktop {
@@ -33,12 +32,10 @@
     }
   }
   &__caption {
-    font-size: 14px;
-    line-height: 18px;
-    color: #911c1c;
+    @include font-S;
+    color: $secondary-color;
     @include desktop {
-      font-size: 24px;
-      line-height: 31px;
+      @include font-M;
     }
   }
   &__prev {
@@ -54,7 +51,7 @@
     }
     svg {
       transform: rotate(180deg);
-      color: #911c1c;
+      color: $secondary-color;
       height: 8.161739349365234px;
       width: 13.22667121887207px;
       @include desktop {
@@ -75,7 +72,7 @@
       width: 96px;
     }
     svg {
-      color: #911c1c;
+      color: $secondary-color;
       height: 8.161739349365234px;
       width: 13.22667121887207px;
       @include desktop {
